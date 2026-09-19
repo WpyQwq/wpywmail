@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- 必须关闭 InvariantGlobalization，否则 GBK/GB2312 代码页不可用，非 UTF-8 的中文邮件会解码失败 -->
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <AssemblyName>WpywMail.Native</AssemblyName>
+    <RootNamespace>WpywMail.Native</RootNamespace>
+    <Version>2.0.1</Version>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 邮件存储后端：SQLite（单文件、WAL、带索引/事务）。随包发布原生库，无需外部安装。 -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.10" />
+  </ItemGroup>
+</Project>
